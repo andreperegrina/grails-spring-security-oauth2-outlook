@@ -18,7 +18,7 @@ def setIfNotSet = { String name, value ->
 setIfNotSet 'issueTrackerUrl', project.vcsUrl + '/issues'
 setIfNotSet 'websiteUrl', project.vcsUrl
 
-version "0.1"
+version "0.0.11"
 group "org.grails.plugins"
 
 apply plugin:"eclipse"
@@ -50,7 +50,8 @@ dependencies {
     compile "com.google.code.gson:gson:2.8.5"
     provided 'javax.servlet:javax.servlet-api:3.1.0'
     provided 'org.grails:grails-dependencies'
-    compile 'org.codehaus.groovy:groovy-all:2.4.3'
+    compile 'org.codehaus.groovy:groovy-all:2.4.13'
+    compile 'org.grails:grails-logging'
     provided 'org.grails.plugins:spring-security-core:3.+'
     provided 'org.grails.plugins:spring-security-oauth2:1.1.0'
 
@@ -61,15 +62,17 @@ task wrapper(type: Wrapper) {
     gradleVersion = gradleWrapperVersion
 }
 
-// enable if you wish to package this plugin as a standalone application
+
 grailsPublish {
-    githubSlug = 'foo/bar'
+    user = 'user'
+    key = 'key'
+    githubSlug = 'andreperegrina/grails-spring-security-oauth2-outlook'
     license {
         name = 'Apache-2.0'
     }
-    title = ""
-    desc = "Full plugin description"
-    developers = [johndoe:"John Doe"]
+    title = "Spring Security Oauth2 Outlook Provider"
+    desc = "This plugin provides the capability to authenticate via outlook-oauth provider. Depends on grails-spring-security-oauth2."
+    developers = [andreperegrina: "Andre Peregrina"]
 }
 
 

@@ -52,6 +52,6 @@ class OutlookOAuth2Service extends OAuth2AbstractProviderService {
             throw new OAuth2Exception("No user id from " + getProviderID())
         }
         new OutlookOauth2SpringToken(accessToken, user?.userPrincipalName, providerID)
-
     }
+
 }

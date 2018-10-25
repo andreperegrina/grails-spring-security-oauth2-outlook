@@ -36,21 +36,16 @@ public class IdToken {
         String idToken = tokenParts[1];
         byte[] decodedBytes = Base64.decodeBase64(idToken);
         String tokenString = new JSONObject(new String(decodedBytes)).toString();
-//		ObjectMapper objectMapper = new ObjectMapper();
-//		try {
-//			objectMapper.readValue(decodedBytes, IdToken.class);
-//		} catch (IOException e) {
-//			e.printStackTrace();
-//		}
+
         GsonBuilder builder = new GsonBuilder();
         Gson gson = builder.create();
 
         IdToken newToken = null;
         try {
             newToken = gson.fromJson(tokenString, IdToken.class);
-            if (!newToken.isValid(nonce)) {
-                return null;
-            }
+//            if (!newToken.isValid(nonce)) {
+//                return null;
+//            }
         } catch (Exception e) {
             e.printStackTrace();
         }

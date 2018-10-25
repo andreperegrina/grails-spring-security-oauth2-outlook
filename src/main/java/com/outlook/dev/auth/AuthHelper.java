@@ -102,11 +102,12 @@ public class AuthHelper {
 
 	public static String getLoginUrlSpringSecurity(UUID state, UUID nonce) {
 		UriComponentsBuilder urlBuilder = UriComponentsBuilder.fromHttpUrl(authorizeUrl);
+		urlBuilder.queryParam("response_type", "code id_token");
 		urlBuilder.queryParam("state", state);
 		urlBuilder.queryParam("nonce", nonce);
 		urlBuilder.queryParam("response_mode", "form_post");
 		String url=urlBuilder.toUriString();
-		return url+"&response_type=code id_token&client_id=%s&redirect_uri=%s";
+		return url;
 	}
 
 
