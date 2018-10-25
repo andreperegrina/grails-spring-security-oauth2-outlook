@@ -18,7 +18,7 @@ def setIfNotSet = { String name, value ->
 setIfNotSet 'issueTrackerUrl', project.vcsUrl + '/issues'
 setIfNotSet 'websiteUrl', project.vcsUrl
 
-version "0.0.11"
+version "0.1"
 group "org.grails.plugins"
 
 apply plugin:"eclipse"
