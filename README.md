@@ -1,3 +1,4 @@
+![header](./header.png)
 Spring Security OAuth2 Outlook Plugin
 ====================================
 [ ![Download](https://api.bintray.com/packages/andreperegrina/plugins/spring-security-oauth2-outlook/images/download.svg) ](https://bintray.com/andreperegrina/plugins/spring-security-oauth2-outlook/_latestVersion)
